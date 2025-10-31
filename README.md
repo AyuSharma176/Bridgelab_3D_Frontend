@@ -49,7 +49,3 @@ The calculator performs basic arithmetic operations like addition, subtraction, 
 - How to debug layout and logical errors in a small web project.  
 
 ---
-
-## 📸 Preview (Optional)
-You can add a screenshot of your calculator here:
-
