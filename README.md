@@ -92,6 +92,6 @@ Each task focuses on learning specific web design fundamentals and hands-on impl
 ---
 
 ## 🧑‍💻 Author
-**Your Name**  
+**Ayush Sharma**  
 *Web Development Class Assignments*  
 *Topics: HTML & CSS Fundamentals*
