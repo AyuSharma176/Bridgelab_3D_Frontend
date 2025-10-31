@@ -35,7 +35,19 @@ Each task focuses on learning specific web design fundamentals and hands-on impl
 
 ---
 
-### 4. 🧭 **CSS Flexbox and Grid**
+### 4. 📦 **CSS Box Model**
+- Learned how every element in CSS is a rectangular box that consists of:
+  - **Content**
+  - **Padding**
+  - **Border**
+  - **Margin**
+- Understood how spacing and sizing affect layout and design.  
+- Experimented with different borders, padding, and margins to control element positioning.  
+- Practiced visualizing how the box model influences element spacing and overlap.
+
+---
+
+### 5. 🧭 **CSS Flexbox and Grid**
 - Learned how to create **responsive layouts** using **Flexbox** and **CSS Grid**.  
 - Practiced aligning, distributing, and positioning items using:
   - `display: flex`
@@ -49,10 +61,25 @@ Each task focuses on learning specific web design fundamentals and hands-on impl
 
 ---
 
+### 6. 🎯 **CSS Pseudo Classes**
+- Explored how to use **pseudo-classes** to style elements based on their state or position.  
+- Practiced with selectors like:
+  - `:hover`
+  - `:focus`
+  - `:active`
+  - `:first-child`
+  - `:nth-child()`
+- Created interactive buttons and hover effects.  
+- Understood how pseudo-classes improve user experience through visual feedback.
+
+---
+
 ## 🧠 What I Learned
 - How HTML structures content and CSS styles it.  
 - Difference between block and inline elements.  
 - How to organize layouts using Flexbox and Grid.  
+- How the **Box Model** controls layout spacing.  
+- How **Pseudo Classes** enhance interactivity.  
 - Importance of responsive design and clean code organization.  
 - How to link multiple HTML and CSS files together effectively.
 
@@ -60,7 +87,7 @@ Each task focuses on learning specific web design fundamentals and hands-on impl
 
 ## 🧰 Technologies Used
 - **HTML5** – For web page structure  
-- **CSS3** – For styling and layout (Flexbox and Grid)
+- **CSS3** – For styling and layout (Box Model, Flexbox, Grid, Pseudo Classes)
 
 ---
 
