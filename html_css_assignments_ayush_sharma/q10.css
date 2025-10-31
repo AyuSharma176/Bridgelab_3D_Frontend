@@ -1,0 +1,36 @@
+/* Q10 - Complete layout using box model, positioning, flex/grid, rgba and gradients */
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial, sans-serif;}
+.main-header{position:sticky;top:0;background:linear-gradient(90deg,rgba(11,116,255,0.95),rgba(8,32,76,0.95));color:#fff;padding:0.8rem 1rem;display:flex;justify-content:space-between;align-items:center;z-index:100;}
+.hero{height:50vh;background-image:url('hero-bg.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#fff;position:relative;}
+.hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.35);}
+.hero-text{position:relative;z-index:2;text-align:center;padding:1rem;border:1px solid rgba(255,255,255,0.08);border-radius:6px;background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));}
+
+/* About with two columns */
+.about{padding:2rem;background:#f7fbff;}
+.about-inner{display:flex;gap:1rem;align-items:center;max-width:1100px;margin:0 auto;}
+.about-inner .text{flex:1;padding:1rem;}
+.about-inner .image{flex:1;padding:1rem;}
+.about-inner img{width:100%;border:8px solid rgba(11,116,255,0.06);border-radius:6px;}
+
+/* Services row using grid */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:2rem;max-width:1100px;margin:0 auto;}
+.service-box{padding:1.5rem;background:#fff;border:1px solid #e6eefb;box-shadow:0 8px 20px rgba(2,6,23,0.06);text-align:center;border-radius:6px;}
+
+/* Contact small form */
+.contact{padding:2rem;background:linear-gradient(180deg,rgba(11,116,255,0.06),transparent);}
+.contact-small{max-width:500px;margin:0 auto;display:flex;gap:0.5rem;align-items:center;justify-content:center;}
+.contact-small input{flex:1;padding:0.6rem;border-radius:6px;border:1px solid rgba(2,6,23,0.08);}
+.contact-small button{padding:0.6rem 1rem;border:none;border-radius:6px;background:#0b74ff;color:#fff;}
+
+/* Footer */
+.main-footer{text-align:center;padding:1rem;background:#0b1220;color:#fff;margin-top:1rem;}
+
+/* Demonstrate outline, margin, padding on service boxes */
+.service-box{margin:0;padding:1.5rem;outline:1px solid rgba(11,116,255,0.02);}
+
+/* Positioning example: absolute badge in hero */
+.hero-text h2{position:relative;}
+.hero-text h2::after{content:'New';position:absolute;right:-3rem;top:-0.6rem;background:#ff5a5f;color:#fff;padding:0.25rem 0.5rem;border-radius:4px;font-size:0.8rem;}
+/* Responsive rules */
+@media (max-width:900px){ .about-inner{flex-direction:column;} .services{grid-template-columns:1fr;} }

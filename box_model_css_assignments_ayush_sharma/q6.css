@@ -1,0 +1,16 @@
+/* Q6 - Transformations showcase
+   - Four boxes demonstrate rotate, scale, translate, skew on hover
+*/
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial, sans-serif;}
+header, footer{text-align:center;padding:1rem;background:#0b74ff;color:#fff;}
+.transforms{display:flex;gap:1rem;padding:2rem;justify-content:center;align-items:center;flex-wrap:wrap;}
+.t{display:flex;flex-direction:column;align-items:center;gap:0.5rem;}
+.box{width:120px;height:120px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(2,6,23,0.06);transition:all 0.4s ease;}
+.rotate .box:hover{transform:rotate(12deg);}
+.scale .box:hover{transform:scale(1.2);}
+.translate .box:hover{transform:translateY(-12px);}
+.skew .box:hover{transform:skewX(12deg);}
+.label{font-size:0.95rem;color:#333;}
+
+/* Responsive wrap */
+@media (max-width:700px){ .transforms{flex-direction:column;} }

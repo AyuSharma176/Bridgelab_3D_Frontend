@@ -1,0 +1,20 @@
+/* Q5 - Button Collection
+   - Demonstrates :hover, :active, :focus, :disabled
+*/
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial, sans-serif;}
+header, footer{text-align:center;padding:1rem;background:#0b74ff;color:#fff;}
+.buttons{display:flex;gap:1rem;align-items:center;justify-content:center;padding:2rem;flex-wrap:wrap;}
+.btn{padding:0.6rem 1rem;border-radius:8px;border:2px solid transparent;cursor:pointer;transition:all 0.2s ease;box-shadow:0 6px 18px rgba(2,6,23,0.06);}
+.btn:focus{outline:none;box-shadow:0 0 0 4px rgba(11,116,255,0.12);}
+
+/* Variants */
+.primary{background:#0b74ff;color:#fff;border-color:#0b74ff;}
+.primary:hover{transform:translateY(-4px);background:#084c8f;}
+.secondary{background:#eef2ff;color:#0b74ff;border-color:#c7ddff;}
+.secondary:active{transform:scale(0.98);}
+.outline{background:transparent;border-color:#0b74ff;color:#0b74ff;}
+.outline:hover{background:#0b74ff;color:#fff;}
+button[disabled]{opacity:0.5;cursor:not-allowed;box-shadow:none;}
+
+/* Responsive stacking */
+@media (max-width:600px){ .buttons{flex-direction:column;} }

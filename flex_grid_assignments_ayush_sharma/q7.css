@@ -1,0 +1,13 @@
+/* Q7: Three circles move up and down using keyframes */
+/* Center with flexbox */
+*{box-sizing:border-box;margin:0;padding:0;}
+body{height:100vh;display:flex;align-items:center;justify-content:center;background:#f7fbff;}
+.loader{display:flex;gap:1rem;align-items:flex-end;}
+.dot{width:18px;height:18px;border-radius:50%;background:#0b74ff;animation:jump 0.8s ease-in-out infinite;}
+.dot.d2{animation-delay:0.15s;}
+.dot.d3{animation-delay:0.3s;}
+@keyframes jump{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-18px);}
+  100%{transform:translateY(0);}
+}

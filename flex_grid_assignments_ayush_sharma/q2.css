@@ -1,0 +1,18 @@
+/* Q2: 4-column product gallery using CSS Grid */
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial, sans-serif;}
+.gallery{max-width:1200px;margin:2rem auto;padding:1rem;}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;align-items:stretch;}
+.card{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 8px 18px rgba(2,6,23,0.06);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.3s ease;}
+.card:hover{transform:scale(1.05);}
+.card h3{margin-bottom:0.5rem;}
+.price{font-weight:700;color:#0b74ff;}
+
+/* Tablet: 2 columns */
+@media (max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr);}
+}
+
+/* Mobile: 1 column */
+@media (max-width:500px){
+  .grid{grid-template-columns:1fr;}
+}

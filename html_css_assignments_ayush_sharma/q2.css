@@ -1,0 +1,26 @@
+/* Q2 - Multi-section informational webpage
+   - Uses full-width backgrounds, linear & radial gradients, padding, margins, borders,
+     and demonstrates background-attachment: fixed for parallax effect.
+*/
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial, Helvetica, sans-serif;}
+
+.header{padding:1rem;background:#123; color:#fff;text-align:center;}
+.header nav{margin-top:0.5rem;font-size:0.95rem;}
+
+/* Hero with background image (placeholder) and fixed attachment */
+.hero{height:60vh;background-image:url('kyoto-hero.jpg');background-size:cover;background-position:center;background-attachment:fixed;display:flex;align-items:center;justify-content:center;}
+.hero .overlay{background:rgba(0,0,0,0.35);padding:2rem;border-radius:8px;color:#fff;}
+
+/* History uses linear gradient */
+.history{background:linear-gradient(90deg,#fff3e0,#ffe0b2);padding:3rem;border-top:6px solid rgba(0,0,0,0.05);}
+.history .inner{max-width:900px;margin:0 auto;}
+
+/* Sakura uses radial gradient and fixed background image for parallax */
+.sakura{background-image:url('sakura.jpg');background-size:cover;background-position:center;background-attachment:fixed; padding:4rem 1rem; color:#fff;}
+.sakura::before{content:'';display:block;height:100%;background:radial-gradient(circle at 20% 30%, rgba(255,192,203,0.25), rgba(0,0,0,0.35));position:absolute;}
+
+/* Modern section simple color and spacing */
+.modern{background:#f4f7fb;padding:3rem;border-top:1px solid #e1e7ee;}
+.inner{max-width:1000px;margin:0 auto;}
+.footer{background:#0b1b2b;color:#fff;padding:1rem;text-align:center;margin-top:1rem;}

@@ -1,0 +1,21 @@
+/* Q1: Flexbox portfolio
+- Header with left name and right nav using flexbox
+- Main area: two sections side-by-side, switch to column below 700px
+*/
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial, sans-serif;}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#0b74ff;color:#fff;position:sticky;top:0;}
+.site-header .right a{color:#fff;text-decoration:none;margin-left:1rem;}
+.main{display:flex;gap:2rem;align-items:center;justify-content:center;padding:2rem;min-height:70vh;}
+.about{flex:1;max-width:700px;}
+.photo{flex:1;display:flex;align-items:center;justify-content:center;}
+.photo img{max-width:320px;width:100%;height:auto;border-radius:8px;border:4px solid rgba(11,116,255,0.12);}
+
+/* Footer centered */
+.site-footer{display:flex;align-items:center;justify-content:center;padding:1rem;background:#f1f5f9;margin-top:auto;}
+
+/* Responsive: stack vertically below 700px */
+@media (max-width:700px){
+  .main{flex-direction:column;align-items:center;text-align:center;padding:1rem;}
+  .site-header{flex-direction:column;gap:0.5rem;}
+  .site-header .right a{margin-left:0.5rem;margin-right:0.5rem;}
+}

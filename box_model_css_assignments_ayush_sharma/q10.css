@@ -1,0 +1,18 @@
+/* Q10 - Navigation bar with transitions and responsive stacking
+   - Smooth hover transitions and active link styling
+*/
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial, sans-serif;}
+.nav-wrap{background:#0b74ff;padding:0.5rem;}
+.nav{max-width:1100px;margin:0 auto;display:flex;gap:0.5rem;align-items:center;justify-content:center;}
+.nav a{padding:0.6rem 1rem;border-radius:6px;color:#fff;text-decoration:none;transition:all 0.3s ease;border:1px solid transparent;}
+.nav a:hover{transform:translateY(-2px);background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.12);}
+.nav a.active{background:#fff;color:#0b74ff;box-shadow:0 6px 18px rgba(2,6,23,0.08);}
+
+/* Responsive: stack vertically below 700px */
+@media (max-width:700px){
+  .nav{flex-direction:column;padding:0.5rem;}
+  .nav a{width:100%;text-align:center;margin-bottom:0.4rem;}
+}
+
+/* Footer centered */
+.footer{text-align:center;padding:1rem;background:#0b1220;color:#fff;margin-top:1rem;}
