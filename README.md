@@ -52,8 +52,6 @@ The updated design adjusts perfectly for desktops, tablets, and mobile screens.
 - Smooth **box-shadow transitions** for depth  
 - Clean, **modern look** consistent across all devices  
 
-> 🖼️ *Preview of the new responsive design:*
-
 ---
 
 ## 📚 What I Learned
