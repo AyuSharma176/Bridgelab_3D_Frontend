@@ -30,16 +30,14 @@ The calculator performs basic arithmetic operations like addition, subtraction, 
 ## 🧩 Technologies Used
 - **HTML5** – for structure  
 - **CSS3** – for styling and layout (Flexbox + Media Queries)  
-- **JavaScript** – for calculator logic and interactivity
 
 ---
 
 ## 🛠️ How It Works
-1. The calculator layout is designed using **Flexbox** to align buttons and the display neatly.  
-2. Each button is styled with CSS for consistent sizing and hover effects.  
-3. JavaScript captures button clicks and performs the required calculations in real-time.  
-4. The result is displayed dynamically on the calculator screen.  
-5. The interface is now **responsive**, adapting automatically to various screen sizes.
+1. The calculator layout is designed using **Flexbox** to align buttons and the display neatly.
+2. JavaScript captures button clicks and performs the required calculations in real-time.  
+3. The result is displayed dynamically on the calculator screen.  
+4. The interface is now **responsive**, adapting automatically to various screen sizes.
 
 ---
 
@@ -63,14 +61,14 @@ The updated design adjusts perfectly for desktops, tablets, and mobile screens.
 ## 📚 What I Learned
 - How to use **Flexbox** (`display: flex`, `justify-content`, `align-items`, `flex-wrap`, etc.)  
 - How to create **responsive layouts** using media queries.  
-- How to connect **HTML and JavaScript** to build an interactive UI.  
+- How to connect **HTML and CSS** to build an interactive UI.  
 - How to debug layout and logical errors in small web projects.  
 - How to ensure design **consistency across devices**.
 
 ---
 
 ## 🧾 Summary
-This project demonstrates the integration of structure, style, and logic using **HTML**, **CSS**, and **JavaScript**.  
+This project demonstrates the integration of structure, style, and logic using **HTML**, **CSS**.  
 It reflects progress in understanding **responsive design principles** and **modern UI layout techniques**.
 
 ---
