@@ -54,8 +54,6 @@ The updated design adjusts perfectly for desktops, tablets, and mobile screens.
 
 > 🖼️ *Preview of the new responsive design:*
 
-![Responsive Design Preview](8fb2b2f8-fb93-4a54-bee2-4d837944f1f6.png)
-
 ---
 
 ## 📚 What I Learned
