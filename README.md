@@ -1,72 +1,57 @@
-# 🧮 Calculator Project
+# Frontend Development — College Lectures
 
-## 📘 Overview
-This project is a simple **Calculator** built using **HTML, CSS, and JavaScript**.  
-It was created as part of a class activity to learn and apply **Flexbox layout**, **CSS styling techniques**, and **basic web interactivity** using JavaScript.
+Welcome to the Frontend Development repository.  
 
-The calculator performs basic arithmetic operations like addition, subtraction, multiplication, and division, and features a clean and responsive design.
-
----
-
-## 🎯 Learning Objectives
-- Understand and implement **Flexbox** for layout design.  
-- Apply various **CSS properties** for styling (colors, borders, spacing, alignment, etc.).  
-- Build a **fully functional calculator** using HTML structure, CSS design, and JavaScript logic.  
-- Practice organizing code for better readability and maintainability.
+### Lecture 1: Introduction to Web Development
+- Overview of frontend, backend, and full-stack development  
+- Understanding how browsers render web pages  
+- The client–server model and web request flow  
+- Setting up tools: VS Code, GitHub, and Live Server  
 
 ---
 
-## 🧱 Features
-- ➕ Addition  
-- ➖ Subtraction  
-- ✖️ Multiplication  
-- ➗ Division  
-- 🧹 Clear/Reset functionality  
-- 🖥️ Responsive layout using Flexbox  
-- 🎨 Styled with custom CSS (hover effects, borders, shadows, button styling)
+### Lecture 2: HTML Fundamentals
+- Structure of an HTML document  
+- Headings, paragraphs, links, lists, and images  
+- Semantic elements: <header>, <main>, <section>, <footer>  
+- Best practices for clean, readable markup  
 
 ---
 
-## 🧩 Technologies Used
-- **HTML5** – for structure  
-- **CSS3** – for styling and layout (Flexbox + Media Queries)  
+### Lecture 3: Page Elements and Embedding Content
+- Difference between block and inline elements  
+- Common examples: <div>, <p>, <span>, <a>  
+- Embedding videos, maps, and other web content using iframes  
+- Attributes like src, width, height, and allowfullscreen  
 
 ---
 
-## 🛠️ How It Works
-1. The calculator layout is designed using **Flexbox** to align buttons and the display neatly.
-2. JavaScript captures button clicks and performs the required calculations in real-time.  
-3. The result is displayed dynamically on the calculator screen.  
-4. The interface is now **responsive**, adapting automatically to various screen sizes.
+### Lecture 4: Introduction to CSS
+- Ways to add CSS: inline, internal, and external  
+- Understanding selectors, properties, and values  
+- Basic styling: colors, fonts, and spacing  
+- Using Chrome DevTools for inspection and quick styling  
 
 ---
 
-## 📱 Responsive Design (📅 *November 3, 2025*)
-Today, I worked on making the design **fully responsive** using **Flexbox** and **CSS media queries**.  
-The updated design adjusts perfectly for desktops, tablets, and mobile screens.
-
-### ✅ Enhancements:
-- Optimized layout for **different screen sizes**  
-- Dynamic **text and image scaling**  
-- Balanced **gradients, spacing, and alignment**  
-- Smooth **box-shadow transitions** for depth  
-- Clean, **modern look** consistent across all devices  
+### Lecture 5: Layout Techniques with Flexbox and Box Model
+- Understanding the CSS box model: content, padding, border, and margin  
+- The box-sizing property and layout debugging  
+- Flexbox fundamentals for aligning and distributing items  
+- Building a responsive navbar and gallery layout  
 
 ---
 
-## 📚 What I Learned
-- How to use **Flexbox** (`display: flex`, `justify-content`, `align-items`, `flex-wrap`, etc.)  
-- How to create **responsive layouts** using media queries.  
-- How to connect **HTML and CSS** to build an interactive UI.  
-- How to debug layout and logical errors in small web projects.  
-- How to ensure design **consistency across devices**.
+### Lecture 6: Advanced CSS Concepts
+- Pseudo-classes like :hover, :focus, and :nth-child()  
+- Transitions and transforms for smooth animations  
+- Dimension units: px, em, rem, vh, vw, and %  
+- Combining these concepts for interactive designs  
 
 ---
 
-## 🧾 Summary
-This project demonstrates the integration of structure, style, and logic using **HTML**, **CSS**.  
-It reflects progress in understanding **responsive design principles** and **modern UI layout techniques**.
-
----
-
-✨ *Created by Ayush Sharma — 2025*
+### Lecture 7: Responsive Design and Final Project
+- Principles of responsive web design  
+- Using media queries for mobile and desktop views  
+- Grid layout for two-dimensional designs  
+- Final project: building a fully responsive webpage using all learned concepts
