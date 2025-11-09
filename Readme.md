@@ -123,6 +123,7 @@ Make your webpages beautiful and functional on any screen size.
 
 ## 📂 Repository Structure
 
+```
 /lectures
 ├── lecture1-introduction.md
 ├── lecture2-html-basics.md
@@ -134,7 +135,6 @@ Make your webpages beautiful and functional on any screen size.
 
 /projects
 └── final-responsive-website
-
-
+```
 
 
