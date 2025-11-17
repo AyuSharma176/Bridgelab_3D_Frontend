@@ -1,1 +1,0 @@
-let currentSalary=30000;let rate=10;let table={};for(let y=1;y<=5;y++){currentSalary+=currentSalary*(rate/100);table[`Year ${y}`]=Math.round(currentSalary);}console.table(table);

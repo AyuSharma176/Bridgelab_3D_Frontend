@@ -1,1 +1,0 @@
-let expenses=[5000,1200,15000,2500,1800];let total=expenses.reduce((a,b)=>a+b,0);let avg=total/expenses.length;total+=total*0.10;console.log("Average:",avg.toFixed(2));console.log("Final:",total.toFixed(2));

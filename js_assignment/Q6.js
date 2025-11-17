@@ -1,1 +1,0 @@
-let totalAmount=6500;let discount=0;if(totalAmount>=10000){discount=25;}else if(totalAmount>=5000){discount=15;}else if(totalAmount>=2000){discount=5;}let final=totalAmount-totalAmount*discount/100;console.log("Original:",totalAmount);console.log("Discount:",discount);console.log("Final:",Math.round(final));
