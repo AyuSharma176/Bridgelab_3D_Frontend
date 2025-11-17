@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>JS Assignment Runner</title></head>
+<body>
+<h2>JavaScript Assignment – Click to Run in Console</h2>
+<p>Open browser console and click any script.</p>
+<ul>
+<li><button onclick="run('Q1.js')">Q1.js</button></li>
+<li><button onclick="run('Q2.js')">Q2.js</button></li>
+<li><button onclick="run('Q3.js')">Q3.js</button></li>
+<li><button onclick="run('Q4.js')">Q4.js</button></li>
+<li><button onclick="run('Q5.js')">Q5.js</button></li>
+<li><button onclick="run('Q6.js')">Q6.js</button></li>
+<li><button onclick="run('Q7.js')">Q7.js</button></li>
+<li><button onclick="run('Q8.js')">Q8.js</button></li>
+<li><button onclick="run('Q9.js')">Q9.js</button></li>
+<li><button onclick="run('Q10.js')">Q10.js</button></li>
+</ul>
+<script>
+function run(file){const s=document.createElement('script');s.src=file;document.body.appendChild(s);}
+</script>
+</body>
+</html>

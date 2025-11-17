@@ -1,0 +1,1 @@
+let marks=[85,90,88,92,80];let fail=marks.some(m=>m<35);let totalM=marks.reduce((a,b)=>a+b,0);let perc=(totalM/500)*100;console.log("Percentage:",perc.toFixed(2));if(fail){console.log("Detained");}else if(perc>=85){console.log("Promoted with Distinction");}else if(perc>=50){console.log("Promoted");}else{console.log("Detained");}

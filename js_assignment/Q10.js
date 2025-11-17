@@ -1,0 +1,1 @@
+let age2=19;let isCitizen=true;if(isCitizen&&age2>=18){if(age2>=21){console.log("Eligible for all services.");}else{console.log("Eligible to vote only.");}}else if(!isCitizen&&age2>=18){console.log("Only age criteria met.");}else{console.log("Not eligible yet.");}

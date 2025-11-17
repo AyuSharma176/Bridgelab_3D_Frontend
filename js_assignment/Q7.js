@@ -1,0 +1,1 @@
+let secret=Math.floor(Math.random()*50)+1;let guess=23;console.log("Secret:",secret);console.log("Guess:",guess);if(guess===secret){console.log("Correct guess!");}else if(Math.abs(guess-secret)<=3){console.log("Very close!");}else{console.log(guess>secret?"Too high":"Too low");}

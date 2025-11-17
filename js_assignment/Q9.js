@@ -1,0 +1,1 @@
+let n1=Math.floor(Math.random()*20)+1;let n2=Math.floor(Math.random()*20)+1;let ops=["+","-","*","/"];let op=ops[Math.floor(Math.random()*ops.length)];let ans;switch(op){case "+":ans=n1+n2;break;case "-":ans=n1-n2;break;case "*":ans=n1*n2;break;case "/":ans=(n1/n2).toFixed(2);}console.log(`Question: ${n1} ${op} ${n2}`);console.log("Answer:",ans);
