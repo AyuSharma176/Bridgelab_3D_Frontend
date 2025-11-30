@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Q3 Task Manager</title>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <style>
+    body{font-family: Arial; padding:20px}
+    .task{display:flex; justify-content:space-between; padding:8px; border-bottom:1px solid #eee}
+  </style>
+</head>
+<body>
+  <h1>Task Manager</h1>
+  <label>Filter / Sort:
+    <select id="filter">
+      <option value="">-- All --</option>
+      <option value="priority=Low">Low Priority</option>
+      <option value="priority=Medium">Medium Priority</option>
+      <option value="priority=High">High Priority</option>
+      <option value="completed=true">Completed</option>
+    </select>
+  </label>
+  <div id="list" style="margin-top:12px"></div>
+
+<script>
+const base = 'http://localhost:3003/tasks';
+
+function load(filter){
+  let url = base;
+  if(filter){
+    // filter comes as "priority=High" or "completed=true"
+    url += '?' + filter;
+  }
+  $.ajax({
+    url: url,
+    method: 'GET',
+    success: function(data){
+      render(data);
+    },
+    error: function(){
+      $('#list').html('<div>Failed to load tasks</div>');
+    }
+  });
+}
+
+function render(tasks){
+  const $list = $('#list').empty();
+  if(!tasks.length){ $list.html('<div>No tasks found</div>'); return; }
+  tasks.forEach(t=>{
+    const $row = $(`<div class="task">
+      <div>
+        <strong>${t.title}</strong><br/><small>Priority: ${t.priority}</small>
+      </div>
+      <div>
+        <label><input type="checkbox" ${t.completed ? 'checked' : ''} data-id="${t.id}"/> Completed</label>
+      </div>
+    </div>`);
+    $list.append($row);
+  });
+
+  // attach checkbox handler
+  $list.find('input[type=checkbox]').change(function(){
+    const id = $(this).data('id');
+    const newVal = $(this).is(':checked');
+    // PATCH request
+    $.ajax({
+      url: base + '/' + id,
+      method: 'PATCH',
+      contentType: 'application/json',
+      data: JSON.stringify({ completed: newVal }),
+      success: function(){ /* UI already shows new state */ },
+      error: function(){
+        // revert checkbox
+        alert('Failed to update task');
+        $(`input[data-id=${id}]`).prop('checked', !newVal);
+      }
+    });
+  });
+}
+
+$('#filter').change(function(){
+  const v = $(this).val();
+  load(v);
+});
+
+// initial load
+load('');
+</script>
+</body>
+</html>

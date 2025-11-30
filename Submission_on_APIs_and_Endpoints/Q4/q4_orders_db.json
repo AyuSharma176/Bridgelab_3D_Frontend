@@ -1,0 +1,9 @@
+{
+  "orders": [
+    { "id": 1, "userId": 1, "total": 1299, "status": "delivered" },
+    { "id": 2, "userId": 2, "total": 499, "status": "processing" },
+    { "id": 3, "userId": 3, "total": 2399, "status": "delivered" },
+    { "id": 4, "userId": 1, "total": 299, "status": "cancelled" },
+    { "id": 5, "userId": 4, "total": 1599, "status": "shipped" }
+  ]
+}

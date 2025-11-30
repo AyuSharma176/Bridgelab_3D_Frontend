@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Q2 Employee Dashboard</title>
+  <style>
+    body{font-family: Arial; padding:20px}
+    table{width:100%; border-collapse:collapse}
+    th,td{padding:8px; border-bottom:1px solid #eee; text-align:left}
+    .toggle{cursor:pointer;padding:6px 10px;border-radius:4px;border:1px solid #ccc;display:inline-block}
+    .active{background:#e6ffed}
+    .inactive{background:#fff2f2}
+    .error{color:red; margin-top:10px}
+  </style>
+</head>
+<body>
+  <h1>Employee Status Dashboard</h1>
+  <table id="tbl">
+    <thead><tr><th>ID</th><th>Name</th><th>Status</th><th>Action</th></tr></thead>
+    <tbody id="body"></tbody>
+  </table>
+  <div id="error" class="error" style="display:none"></div>
+
+<script>
+const base = 'http://localhost:3002/employees';
+
+function showError(msg){
+  const el = document.getElementById('error');
+  el.textContent = msg;
+  el.style.display = 'block';
+  setTimeout(()=> el.style.display = 'none', 4000);
+}
+
+function fetchEmployees(){
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', base, true);
+  xhr.onload = function(){
+    if(xhr.status >= 200 && xhr.status < 300){
+      const data = JSON.parse(xhr.responseText);
+      render(data);
+    } else {
+      showError('Failed to load employees');
+    }
+  };
+  xhr.onerror = function(){ showError('Network error while loading employees'); };
+  xhr.send();
+}
+
+function render(list){
+  const tbody = document.getElementById('body');
+  tbody.innerHTML = '';
+  list.forEach(emp => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${emp.id}</td><td>${emp.name}</td>
+      <td class="${emp.status==='active'?'active':'inactive'}" id="status-${emp.id}">${emp.status}</td>
+      <td><span class="toggle" data-id="${emp.id}" data-status="${emp.status}">${emp.status==='active'?'Set Inactive':'Set Active'}</span></td>`;
+    tbody.appendChild(tr);
+  });
+
+  document.querySelectorAll('.toggle').forEach(btn=>{
+    btn.onclick = function(){
+      const id = this.dataset.id;
+      const current = this.dataset.status;
+      const newStatus = current === 'active' ? 'inactive' : 'active';
+      // Optimistic UI update
+      const statusTd = document.getElementById('status-' + id);
+      const prevText = statusTd.textContent;
+      const prevClass = statusTd.className;
+      statusTd.textContent = newStatus;
+      statusTd.className = newStatus==='active' ? 'active' : 'inactive';
+      this.textContent = newStatus==='active' ? 'Set Inactive' : 'Set Active';
+      this.dataset.status = newStatus;
+
+      // Send PATCH
+      const xhr = new XMLHttpRequest();
+      xhr.open('PATCH', base + '/' + id, true);
+      xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+      xhr.onload = () => {
+        if(!(xhr.status >= 200 && xhr.status < 300)){
+          // revert
+          statusTd.textContent = prevText;
+          statusTd.className = prevClass;
+          this.dataset.status = current;
+          this.textContent = current==='active' ? 'Set Inactive' : 'Set Active';
+          showError('Failed to update status on server');
+        }
+      };
+      xhr.onerror = () => {
+        statusTd.textContent = prevText;
+        statusTd.className = prevClass;
+        this.dataset.status = current;
+        this.textContent = current==='active' ? 'Set Inactive' : 'Set Active';
+        showError('Network error while updating status');
+      };
+      xhr.send(JSON.stringify({ status: newStatus }));
+    };
+  });
+}
+
+fetchEmployees();
+</script>
+</body>
+</html>

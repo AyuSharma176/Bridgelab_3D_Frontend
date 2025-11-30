@@ -1,0 +1,9 @@
+{
+  "products": [
+    { "id": 1, "name": "Monitor", "price": 8999 },
+    { "id": 2, "name": "SSD 1TB", "price": 5599 },
+    { "id": 3, "name": "Laptop Stand", "price": 1299 },
+    { "id": 4, "name": "Desk Lamp", "price": 799 },
+    { "id": 5, "name": "Headphones", "price": 2999 }
+  ]
+}

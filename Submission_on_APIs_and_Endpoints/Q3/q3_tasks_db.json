@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Write report",
+      "priority": "High",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Email client",
+      "priority": "Medium",
+      "completed": true
+    },
+    { "id": 3, "title": "Update docs", "priority": "Low", "completed": false },
+    {
+      "id": 4,
+      "title": "Fix bug #123",
+      "priority": "High",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "title": "Team meeting",
+      "priority": "Medium",
+      "completed": true
+    }
+  ]
+}

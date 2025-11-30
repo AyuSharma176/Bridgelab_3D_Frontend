@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Q4 Multi-API Dashboard</title>
+  <style>
+    body{font-family: Arial; padding:20px}
+    .card{display:inline-block; width:180px; padding:12px; margin:8px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    .skeleton{width:120px;height:20px;background:#eee;border-radius:4px;margin:8px 0}
+    .warning{color:darkorange; margin-top:12px}
+  </style>
+</head>
+<body>
+  <h1>Dashboard</h1>
+  <div id="cards">
+    <div class="card"><div>Total users</div><div id="users-count"><div class="skeleton"></div></div></div>
+    <div class="card"><div>Total orders</div><div id="orders-count"><div class="skeleton"></div></div></div>
+    <div class="card"><div>Total products</div><div id="products-count"><div class="skeleton"></div></div></div>
+  </div>
+  <div id="warn" class="warning" style="display:none">Some data could not be loaded.</div>
+
+<script>
+const urls = [
+  { url: 'http://localhost:3004/users', key: 'users' },
+  { url: 'http://localhost:3005/orders', key: 'orders' },
+  { url: 'http://localhost:3006/products', key: 'products' }
+];
+
+function showCounts(dataMap, failed){
+  if(dataMap.users !== undefined) document.getElementById('users-count').textContent = dataMap.users.length;
+  if(dataMap.orders !== undefined) document.getElementById('orders-count').textContent = dataMap.orders.length;
+  if(dataMap.products !== undefined) document.getElementById('products-count').textContent = dataMap.products.length;
+  if(failed) document.getElementById('warn').style.display = 'block';
+}
+
+function loadAll(){
+  // create an array of fetch promises
+  const promises = urls.map(u =>
+    fetch(u.url).then(res => {
+      if(!res.ok) throw new Error('fetch failed ' + u.key);
+      return res.json().then(data => ({ key: u.key, data }));
+    })
+  );
+
+  // Promise.all but handle individual failures
+  Promise.all(promises.map(p => p.catch(e => ({ error: true, errorObj: e }))))
+    .then(results => {
+      const dataMap = {};
+      let anyFailed = false;
+      results.forEach((r, idx) => {
+        if(r && r.error){ anyFailed = true; console.warn('Failed:', urls[idx].url, r.errorObj); }
+        else if(r && r.key){ dataMap[r.key] = r.data; }
+      });
+      showCounts(dataMap, anyFailed);
+    });
+}
+
+// start
+loadAll();
+</script>
+</body>
+</html>
