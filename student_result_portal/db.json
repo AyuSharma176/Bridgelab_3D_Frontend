@@ -13,6 +13,13 @@
       "section": "C",
       "marks": 87,
       "grade": "A"
+    },
+    {
+      "id": "e401",
+      "name": "Jatin Kumar",
+      "section": "D",
+      "marks": 85,
+      "grade": "A"
     }
   ]
 }
